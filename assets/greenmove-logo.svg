@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 160" role="img" aria-labelledby="title desc">
+  <title id="title">Greenmove</title>
+  <desc id="desc">Official Greenmove wordmark: upright forest-green Green joined to italic leaf-green move, with a sloping underline under move and a separate up-right line arrow.</desc>
+  <text x="0" y="108" fill="#173F32" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="800" letter-spacing="-4">Green</text>
+  <text x="282" y="108" fill="#29834C" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="800" font-style="italic" letter-spacing="-4">move</text>
+  <line x1="296" y1="126" x2="548" y2="116" stroke="#29834C" stroke-width="5.5" stroke-linecap="round"/>
+  <g fill="none" stroke="#29834C" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M556 70 L618 28"/>
+    <path d="M590 28 L618 28 L618 56"/>
+  </g>
+</svg>

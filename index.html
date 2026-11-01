@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Greenmove — hospital visits, agreed before you arrive</title>
+<meta name="description" content="Greenmove is how medical representatives request a hospital visit, how hospitals approve or decline it, and how gate security verifies a single-use pass.">
+<meta name="theme-color" content="#050C08">
+<link rel="icon" href="assets/favicon.svg?v=20261101contact" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon.png?v=20261101contact">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Greenmove — hospital visits, agreed before you arrive">
+<meta property="og:description" content="Request, approve and verify medical representative hospital visits. One request, one decision, one single-use pass.">
+<meta property="og:image" content="assets/og-image.png?v=20261101contact">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Greenmove">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Greenmove — hospital visits, agreed before you arrive">
+<meta name="twitter:description" content="Request, approve and verify medical representative hospital visits. One request, one decision, one single-use pass.">
+<meta name="twitter:image" content="assets/og-image.png?v=20261101contact">
+<link rel="preload" href="assets/fonts/cravelo.woff2?v=20261101contact" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/neue-montreal-regular.woff2?v=20261101contact" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=20261101official">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Exact chrome-ribbon backdrop from loquacious-blini-6fb4e1 #contact (same fixed .bg used site-wide; verified vs #contact computed styles + SVG). -->
+<div class="bg" aria-hidden="true"><svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice"><defs>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1a12"/><stop offset=".45" stop-color="#cfe9d8"/><stop offset=".5" stop-color="#ffffff"/><stop offset=".56" stop-color="#1c4a33"/><stop offset="1" stop-color="#050c08"/></linearGradient>
+<linearGradient id="g2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050c08"/><stop offset=".48" stop-color="#078E3F"/><stop offset=".52" stop-color="#bff0d2"/><stop offset="1" stop-color="#050c08"/></linearGradient>
+<filter id="b"><feGaussianBlur stdDeviation="6"/></filter></defs>
+<path d="M-50 720 C 250 520, 420 880, 700 560 S 1000 260, 1080 300" fill="none" stroke="url(#g1)" stroke-width="70" opacity=".55" filter="url(#b)"/>
+<path d="M-80 380 C 200 300, 380 520, 620 360 S 920 120, 1100 180" fill="none" stroke="url(#g2)" stroke-width="26" opacity=".7" filter="url(#b)"/>
+<path d="M120 1050 C 300 760, 600 820, 760 640 S 980 420, 1060 520" fill="none" stroke="url(#g1)" stroke-width="12" opacity=".5"/></svg></div>
+
+<div class="stage" id="stage">
+  <main class="composition" id="main" tabindex="-1">
+    <div class="glass visual-panel">
+      <h1 class="display" aria-label="Greenmove"><img class="display__logo" src="assets/greenmove-logo-dark-bg.svg?v=20261101official" width="680" height="160" alt=""></h1>
+
+      <div class="figure" role="img" aria-label="Greenmove app preview cycling through discover, request, inbox, pass and gate steps">
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bezel">
+            <div class="phone__scr">
+              <div class="phone__status"><span>9:41</span><span class="phone__island"></span><span class="phone__signals">●●● ▮</span></div>
+              <div class="scr-stack" id="scr-stack">
+                <!-- Discover — Directory -->
+                <div class="scr is-on" data-step="discover">
+                  <div class="scr-top">
+                    <span class="scr-logo">Green<span class="scr-logo__move">move<i class="scr-logo__mark"></i></span><i class="scr-logo__arrow">↗</i></span>
+                    <span class="scr-top__trail"><span class="scr-trial">TRIAL · 14/14D</span><span class="scr-avatar">HA</span></span>
+                  </div>
+                  <p class="scr-title">Good connections start here.</p>
+                  <p class="scr-sub">Find hospitals across the UAE.</p>
+                  <div class="scr-card scr-search"><span class="scr-ico" aria-hidden="true">⌕</span><span>Search hospitals, areas or emirates</span></div>
+                  <div class="scr-filters">
+                    <div class="scr-select"><span>Dubai</span><span class="scr-chev">▾</span></div>
+                    <div class="scr-select"><span>All types</span><span class="scr-chev">▾</span></div>
+                  </div>
+                  <p class="scr-count">3 hospitals found · MOHAP 2026</p>
+                  <div class="scr-card scr-fac">
+                    <span class="scr-ini" style="--ini:#E8EEDC">CV</span>
+                    <div class="scr-fac__body">
+                      <b>Cedarview Hospital</b>
+                      <small>Jumeirah, Dubai</small>
+                      <span class="scr-status"><i></i>Connected to Greenmove</span>
+                    </div>
+                  </div>
+                  <div class="scr-card scr-fac">
+                    <span class="scr-ini" style="--ini:#F0E6D2">PG</span>
+                    <div class="scr-fac__body">
+                      <b>Palm Grove Hospital</b>
+                      <small>Healthcare City, Dubai</small>
+                      <span class="scr-status"><i></i>Connected to Greenmove</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Composer — RequestComposer modal -->
+                <div class="scr" data-step="composer">
+                  <div class="scr-sheet">
+                    <div class="scr-sheet__head">
+                      <div>
+                        <p class="scr-kicker">MAKE YOUR NEXT MOVE</p>
+                        <p class="scr-sheet__title">New visit request</p>
+                      </div>
+                      <span class="scr-x">×</span>
+                    </div>
+                    <p class="scr-sub scr-sub--tight">Choose your location, then a connected hospital or clinic.</p>
+                    <label class="scr-field"><span>Location</span><div class="scr-select is-filled"><b>Dubai</b><span class="scr-chev">▾</span></div></label>
+                    <label class="scr-field"><span>Hospital / Clinic</span><div class="scr-select is-filled"><b>Cedarview Hospital · Dubai</b><span class="scr-chev">▾</span></div></label>
+                    <div class="scr-field-row">
+                      <label class="scr-field"><span>Preferred Date</span><div class="scr-select is-filled"><b>Today · 17 Sep</b><span class="scr-chev">▾</span></div></label>
+                      <label class="scr-field"><span>Preferred time · UAE</span><div class="scr-select is-filled"><b>Afternoon · 13:00–17:00</b><span class="scr-chev">▾</span></div></label>
+                    </div>
+                    <div class="scr-field-row">
+                      <label class="scr-field"><span>Visit Purpose</span><div class="scr-select is-filled"><b>Attending Surgery</b><span class="scr-chev">▾</span></div></label>
+                      <label class="scr-field"><span>Specialty Department</span><div class="scr-select is-filled"><b>Cardiothoracic surgery</b><span class="scr-chev">▾</span></div></label>
+                    </div>
+                    <div class="scr-soft">Confirm the specialty department and meeting time with your hospital host before travelling.</div>
+                    <div class="scr-cta">✈ Send Visit Request</div>
+                  </div>
+                </div>
+
+                <!-- My visits -->
+                <div class="scr" data-step="sent">
+                  <div class="scr-top">
+                    <span class="scr-logo">Green<span class="scr-logo__move">move<i class="scr-logo__mark"></i></span><i class="scr-logo__arrow">↗</i></span>
+                    <span class="scr-top__trail"><span class="scr-avatar">HA</span></span>
+                  </div>
+                  <p class="scr-title">Your visits. Moving forward.</p>
+                  <p class="scr-sub">Pending, approved or rejected — every request and its history in one place.</p>
+                  <div class="scr-stats">
+                    <div class="scr-stat is-on"><span class="scr-badge is-amber">Pending</span><b>01</b></div>
+                    <div class="scr-stat"><span class="scr-badge is-good">Approved</span><b>01</b></div>
+                    <div class="scr-stat"><span class="scr-badge is-bad">Rejected</span><b>00</b></div>
+                  </div>
+                  <div class="scr-card scr-visit">
+                    <span class="scr-ini" style="--ini:#E8EEDC">CV</span>
+                    <div class="scr-visit__body">
+                      <b>Cedarview Hospital</b>
+                      <small>Attending Surgery · Cardiothoracic surgery</small>
+                      <span class="scr-badge is-amber">Pending</span>
+                    </div>
+                    <div class="scr-visit__meta">
+                      <span>17 Sep</span>
+                      <small>Afternoon</small>
+                    </div>
+                    <span class="scr-chev-r">›</span>
+                  </div>
+                </div>
+
+                <!-- Hospital inbox -->
+                <div class="scr" data-step="inbox">
+                  <div class="scr-top">
+                    <span class="scr-logo">Green<span class="scr-logo__move">move<i class="scr-logo__mark"></i></span><i class="scr-logo__arrow">↗</i></span>
+                    <span class="scr-top__trail"><span class="scr-avatar">CV</span></span>
+                  </div>
+                  <p class="scr-title">Every introduction, in one place.</p>
+                  <p class="scr-sub">Cedarview Hospital · Review and respond to your hospital’s visit requests.</p>
+                  <div class="scr-stats scr-stats--4">
+                    <div class="scr-stat"><span class="scr-badge is-amber">Pending</span><b>01</b></div>
+                    <div class="scr-stat"><span class="scr-badge is-good">Approved</span><b>01</b></div>
+                    <div class="scr-stat"><span class="scr-badge is-bad">Rejected</span><b>00</b></div>
+                    <div class="scr-stat is-on"><span class="scr-badge is-forest">All History</span><b>02</b></div>
+                  </div>
+                  <div class="scr-card scr-detail">
+                    <span class="scr-badge is-amber">Pending</span>
+                    <b class="scr-card-title">Hani Ahmed</b>
+                    <small class="scr-meta">Verdant Pharma · Medical representative</small>
+                    <p class="scr-note">17 Sep · Afternoon · 13:00–17:00<br>Cardiothoracic surgery · Attending Surgery</p>
+                    <p class="scr-quote">Dr. Laila Haddad — joining the 14:00 valve case.</p>
+                    <div class="scr-actions">
+                      <span class="scr-btn">Approve</span>
+                      <span class="scr-btn is-secondary">Decline</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Pass modal — PassAndSecurity PassModal -->
+                <div class="scr" data-step="pass">
+                  <div class="scr-top">
+                    <span class="scr-logo">Green<span class="scr-logo__move">move<i class="scr-logo__mark"></i></span><i class="scr-logo__arrow">↗</i></span>
+                    <span class="scr-top__trail"><span class="scr-avatar">HA</span></span>
+                  </div>
+                  <p class="scr-title">Your trusted introduction.</p>
+                  <p class="scr-sub">Your identity, your vehicle, and your approved visit passes.</p>
+                  <div class="pass">
+                    <div class="pass__bar">
+                      <span class="scr-logo scr-logo--sm">Green<span class="scr-logo__move">move<i class="scr-logo__mark"></i></span><i class="scr-logo__arrow">↗</i></span>
+                      <span class="scr-x">×</span>
+                    </div>
+                    <span class="scr-avatar scr-avatar--lg">HA</span>
+                    <b class="pass__name">Hani Ahmed</b>
+                    <span class="pass__note">Cedarview Hospital<br>Visit pass · Show at security</span>
+                    <div class="pass__qr">
+                      <svg viewBox="0 0 29 29" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M1 1h7v7H1V1Zm1 1v5h5V2H2Zm1 1h3v3H3V3ZM21 1h7v7h-7V1Zm1 1v5h5V2h-5Zm1 1h3v3h-3V3ZM1 21h7v7H1v-7Zm1 1v5h5v-5H2Zm1 1h3v3H3v-3Z"/>
+                        <path d="M10 1h2v2h-2zm4 0h3v1h-3zm4 1h1v4h-1zm-8 2h3v2h-3zm4-1h2v3h-2zm-5 4h2v3H9zm3 0h5v1h-5zm2 2h2v3h-2zm3-2h2v3h-2zm3 2h3v2h-3zm4 0h4v1h-4zM1 10h2v4H1zm3 0h3v2H4zm4 2h4v2H8zm-3 2h2v3H5zm-4 2h3v2H1zm6 2h4v2H7zm3-3h2v3h-2zm3-2h3v2h-3zm4-1h2v4h-2zm-4 4h3v3h-3zm4 2h2v3h-2zm3-6h2v3h-2zm3 0h4v2h-4zm-2 4h3v2h-3zm4-1h3v4h-3zm-6 5h4v2h-4zm5 1h3v2h-3zm-4 3h2v4h-2zm3 0h5v1h-5zm2 2h3v2h-3zm-8-3h2v4h-2zm-4-2h2v3h-2zm-3 0h2v2h-2zm-1 3h3v4H9zm4 2h3v2h-3zM1 19h3v1H1zm10-10h2v2h-2z"/>
+                      </svg>
+                    </div>
+                    <span class="pass__valid">Valid for 60s</span>
+                    <div class="scr-btn is-secondary pass__refresh">↻ Refresh Pass</div>
+                  </div>
+                </div>
+
+                <!-- Gate security — verified -->
+                <div class="scr" data-step="gate">
+                  <div class="scr-top">
+                    <span class="scr-logo">Green<span class="scr-logo__move">move<i class="scr-logo__mark"></i></span><i class="scr-logo__arrow">↗</i></span>
+                    <span class="scr-top__trail"><span class="scr-avatar">CV</span></span>
+                  </div>
+                  <p class="scr-title">A confident welcome.</p>
+                  <p class="scr-sub">Verify the person and vehicle before confirming entry.</p>
+                  <div class="scr-card scr-gate">
+                    <span class="scr-badge is-good">Approved</span>
+                    <div class="scr-gate__who">
+                      <span class="scr-avatar scr-avatar--md">HA</span>
+                      <div>
+                        <b>Hani Ahmed</b>
+                        <small>Verdant Pharma · Medical representative</small>
+                      </div>
+                    </div>
+                    <p class="scr-note">Cardiothoracic surgery · Attending Surgery</p>
+                    <div class="scr-vehicle">
+                      <span class="scr-vehicle__ico" aria-hidden="true">▣</span>
+                      <b>Silver Toyota Camry</b>
+                      <span>D 48219</span>
+                    </div>
+                    <p class="scr-hint">Compare the person and vehicle. Entry eligibility checks the visit date. Confirm the exact time with the host.</p>
+                    <div class="scr-cta">✓ Confirm Entry</div>
+                  </div>
+                </div>
+              </div>
+              <p class="phone__caption" id="phone-caption">Find the facility</p>
+              <div class="phone__dots" id="phone-dots" role="presentation"></div>
+              <div class="phone__home"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copy-panel">
+      <section class="lede-block" aria-label="About Greenmove">
+        <p class="lede">Hospital visits <span class="accent">agreed</span> before arrival — one request, one decision, one single-use pass.</p>
+        <div class="cta-row">
+          <a class="store-badge" href="https://apps.apple.com/ae/app/greenmove-visits/id6813157798" target="_blank" rel="noopener noreferrer">
+            <img src="assets/app-store-badge.svg?v=20261101contact" width="120" height="40" alt="Download on the App Store">
+          </a>
+          <a class="store-badge" href="#play">
+            <img src="assets/google-play-badge.svg?v=20261101contact" width="135" height="40" alt="Get it on Google Play">
+          </a>
+        </div>
+        <p class="place">Based in UAE</p>
+      </section>
+      <section class="brand-block" aria-label="Greenmove hospital visit access">
+        <img class="brand-logo" src="assets/greenmove-logo-dark-bg.svg?v=20261101official" width="280" height="66" alt="Greenmove">
+        <p class="brand-role">Hospital visit access</p>
+      </section>
+    </div>
+  </main>
+
+  <p class="credit">Built with <span class="orn">❤︎</span> Heal Line LLC.FZ</p>
+  <nav class="dock" aria-label="Primary">
+    <a class="dock__item is-on" href="#main" aria-current="page">Home</a>
+    <button class="dock__item" type="button" data-open="demo" aria-haspopup="dialog" aria-controls="modal-demo">How it works</button>
+    <button class="dock__item" type="button" data-open="pilot" aria-haspopup="dialog" aria-controls="modal-pilot">Pilot</button>
+    <button class="dock__item" type="button" data-open="legal" aria-haspopup="dialog" aria-controls="modal-legal">Contact</button>
+  </nav>
+</div>
+
+<!-- Pilot modal -->
+<dialog class="modal" id="modal-pilot" aria-labelledby="pilot-h">
+  <form method="dialog" class="modal__close-form"><button class="modal__x" value="cancel" aria-label="Close">×</button></form>
+  <div class="modal__body">
+    <p class="modal__kicker">Invitation-only pilot</p>
+    <h2 id="pilot-h">Request pilot access</h2>
+    <p class="modal__lede">Tell us who you are. We onboard a small number of facilities and teams — your request opens as an email draft.</p>
+    <form class="pilot-form" id="pilot-form" action="mailto:hello@greenmove.app" method="post" enctype="text/plain">
+      <label>Hospital, clinic or company
+        <input name="organisation" type="text" autocomplete="organization" required placeholder="Cedarview Hospital">
+      </label>
+      <label>Work email
+        <input name="email" type="email" autocomplete="email" required placeholder="you@yourfacility.ae">
+      </label>
+      <label>You are
+        <select name="role">
+          <option>A hospital or clinic</option>
+          <option>A pharmaceutical or device company</option>
+          <option>A medical representative</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Request access</button>
+      <p class="pilot-hint" id="pilot-hint" role="status">Opens your mail client.</p>
+    </form>
+  </div>
+</dialog>
+
+<!-- Demo modal -->
+<dialog class="modal modal--wide" id="modal-demo" aria-labelledby="demo-h">
+  <form method="dialog" class="modal__close-form"><button class="modal__x" value="cancel" aria-label="Close">×</button></form>
+  <div class="modal__body">
+    <p class="modal__kicker">Watch it work</p>
+    <h2 id="demo-h">Two simulators. Same visit.</h2>
+    <div class="demo-parts" role="tablist" aria-label="Simulator audience">
+      <button type="button" role="tab" id="demo-tab-rep" aria-controls="demo-panel" class="demo-part is-on" aria-selected="true" data-part="rep">Medical representative</button>
+      <button type="button" role="tab" id="demo-tab-hospital" aria-controls="demo-panel" class="demo-part" aria-selected="false" data-part="hospital">Hospital</button>
+    </div>
+    <div class="demo-player" id="demo-panel" role="tabpanel" aria-labelledby="demo-tab-rep">
+      <video id="demo-video" playsinline controls preload="none" poster="assets/demo-poster.svg">
+        <source id="demo-source" src="assets/greenmove-rep.mp4" type="video/mp4"
+          data-rep="assets/greenmove-rep.mp4" data-hospital="assets/greenmove-hospital.mp4">
+      </video>
+    </div>
+  </div>
+</dialog>
+
+<!-- Legal modal -->
+<dialog class="modal" id="modal-legal" aria-labelledby="legal-h">
+  <form method="dialog" class="modal__close-form"><button class="modal__x" value="cancel" aria-label="Close">×</button></form>
+  <div class="modal__body">
+    <p class="modal__kicker">Contact</p>
+    <h2 id="legal-h">Policies &amp; support</h2>
+    <ul class="legal-links">
+      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/terms.html">Terms</a></li>
+      <li><a href="legal/support.html">Support</a></li>
+      <li><a href="mailto:hello@greenmove.app">hello@greenmove.app</a></li>
+    </ul>
+    <p class="modal__fine">© <span id="yr">2026</span> Greenmove from Heal Line LLC.FZ.</p>
+  </div>
+</dialog>
+
+<script src="main.js?v=20261101official" defer></script>
+</body>
+</html>
